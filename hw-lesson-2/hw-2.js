@@ -71,13 +71,6 @@ console.log(bookN3);
 
 
 
-
-
-
-
-
-
-
 // - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
 
 let usersPassword = [
@@ -93,16 +86,16 @@ let usersPassword = [
     {name: "Sophy", username: "Acolyte", password: 2275999},
 ];
 
-console.log(usersPassword[0]);
-console.log(usersPassword[1]);
-console.log(usersPassword[2]);
-console.log(usersPassword[3]);
-console.log(usersPassword[4]);
-console.log(usersPassword[5]);
-console.log(usersPassword[6]);
-console.log(usersPassword[7]);
-console.log(usersPassword[8]);
-console.log(usersPassword[9]);
+console.log(usersPassword[0]['password']);
+console.log(usersPassword[1]['password']);
+console.log(usersPassword[2]['password']);
+console.log(usersPassword[3]['password']);
+console.log(usersPassword[4]['password']);
+console.log(usersPassword[5]['password']);
+console.log(usersPassword[6]['password']);
+console.log(usersPassword[7]['password']);
+console.log(usersPassword[8]['password']);
+console.log(usersPassword[9]['password']);
 
 
 // Логічні розгалуження:
@@ -139,26 +132,122 @@ if (x3 !== 0){
 // - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
 // (в першу, другу, третю или четверту частину години).
 
-
-
-
-
-
-
-
-
+let time = 50;
+if (time >= 0 && time <= 15){
+    console.log('1 частина');
+}else if (time >= 16 && time <= 30){
+    console.log('2 частина');
+}else if (time >= 31 && time <= 45){
+    console.log('3 частина');
+}else if (time >= 46 && time <= 59){
+    console.log('4 частина');
+}else{
+    console.log('???');
+}
 
 
 
 
 // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
+
+
+let day = 12;
+if (day >= 1 && day <= 10){
+    console.log('1 декада');
+}else if (day >= 11 && day <= 20){
+    console.log('2 декада');
+}else if (day >= 21 && day <= 31) {
+    console.log('3 декада');
+}else {
+    console.log('???');
+}
+
+
+
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
+
+let day2 = 6;
+switch (day2){
+    case 1:
+        console.log('Monday');
+        break;
+    case 2:
+        console.log('Tuesday');
+        break;
+    case 3:
+        console.log('Wednesday');
+        break;
+    case 4:
+        console.log('Thursday');
+        break;
+    case 5:
+        console.log('Friday');
+        break;
+    case 6:
+        console.log('Saturday');
+        break;
+    case 7:
+        console.log('Sunday');
+        break;
+
+}
+
+
+
+
+
+
 //     - Користувач вводить або має два числа.
 //         Потрібно знайти та вивести максимальне число з тих двох .
 //         Також потрібно врахувати коли введені рівні числа.
+
+let a = 98;
+let b = 98;
+let num1 = a-b;
+let num2 = b-a;
+if(num1 > num2){
+    console.log(a);
+} else if(num2 > num1){
+    console.log(b);
+}else if(num1 === num2){
+    console.log(`${a}=${b}`)
+}
+
+
 //
 //     - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
 //         за допомоги  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється falsy (хибноподібні, тобто приводиться до false)
-//
+
+let x = undefined;
+let booX = !!x;
+if (booX !== false ){
+    console.log(x)
+}else {
+    console.log('default')
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //
 //     - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
