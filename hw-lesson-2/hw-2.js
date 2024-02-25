@@ -1,4 +1,3 @@
-
 // Масиви та об'єкти:
 // - Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
 
@@ -71,6 +70,7 @@ console.log(bookN3);
 
 
 
+
 // - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
 
 let usersPassword = [
@@ -98,31 +98,33 @@ console.log(usersPassword[8]['password']);
 console.log(usersPassword[9]['password']);
 
 
+
+
+
 // Логічні розгалуження:
 //     - Є змінна х, якій ви надаєте довільне числове значення.
 //     Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте  скрипт при a, що дорівнює 1, 0, -3
 
 let x1 = 1;
-if (x1 !== 0){
+if (x1 !== 0) {
     console.log('Вірно');
-}else {
+} else {
     console.log('Не вірно');
 }
 
 
-
 let x0 = 0;
-if (x0 !== 0){
+if (x0 !== 0) {
     console.log('Вірно');
-}else {
+} else {
     console.log('Не вірно');
 }
 
 
 let x3 = -3;
-if (x3 !== 0){
+if (x3 !== 0) {
     console.log('Вірно');
-}else {
+} else {
     console.log('Не вірно');
 }
 
@@ -133,17 +135,18 @@ if (x3 !== 0){
 // (в першу, другу, третю или четверту частину години).
 
 let time = 50;
-if (time >= 0 && time <= 15){
+if (time >= 0 && time <= 15) {
     console.log('1 частина');
-}else if (time >= 16 && time <= 30){
+} else if (time >= 16 && time <= 30) {
     console.log('2 частина');
-}else if (time >= 31 && time <= 45){
+} else if (time >= 31 && time <= 45) {
     console.log('3 частина');
-}else if (time >= 46 && time <= 59){
+} else if (time >= 46 && time <= 59) {
     console.log('4 частина');
-}else{
+} else {
     console.log('???');
 }
+
 
 
 
@@ -152,22 +155,23 @@ if (time >= 0 && time <= 15){
 
 
 let day = 12;
-if (day >= 1 && day <= 10){
+if (day >= 1 && day <= 10) {
     console.log('1 декада');
-}else if (day >= 11 && day <= 20){
+} else if (day >= 11 && day <= 20) {
     console.log('2 декада');
-}else if (day >= 21 && day <= 31) {
+} else if (day >= 21 && day <= 31) {
     console.log('3 декада');
-}else {
+} else {
     console.log('???');
 }
+
 
 
 
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
 
 let day2 = 6;
-switch (day2){
+switch (day2) {
     case 1:
         console.log('Monday');
         break;
@@ -195,59 +199,68 @@ switch (day2){
 
 
 
-
-
 //     - Користувач вводить або має два числа.
 //         Потрібно знайти та вивести максимальне число з тих двох .
 //         Також потрібно врахувати коли введені рівні числа.
 
-let a = 98;
+let a = 5646;
 let b = 98;
-let num1 = a-b;
-let num2 = b-a;
-if(num1 > num2){
+let num1 = a - b;
+let num2 = b - a;
+if (num1 > num2) {
     console.log(a);
-} else if(num2 > num1){
+} else if (num2 > num1) {
     console.log(b);
-}else if(num1 === num2){
+} else if (num1 === num2) {
     console.log(`${a}=${b}`)
 }
 
 
-//
+
+
+
 //     - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
 //         за допомоги  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється falsy (хибноподібні, тобто приводиться до false)
 
-let x = undefined;
-let booX = !!x;
-if (booX !== false ){
-    console.log(x)
-}else {
-    console.log('default')
+let x = 5;
+console.log( x || 'default')
+
+
+
+
+
+//  - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
+
+
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+
+
+if (coursesAndDurationArray[0].monthDuration > 5){
+    console.log('Cупер')
 }
 
+if (coursesAndDurationArray[1].monthDuration > 5){
+    console.log('Cупер')
+}
 
+if (coursesAndDurationArray[2].monthDuration > 5){
+    console.log('Cупер')
+}
 
+if (coursesAndDurationArray[3].monthDuration > 5){
+    console.log('Cупер')
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//     - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
+if (coursesAndDurationArray[4].monthDuration > 5){
+    console.log('Cупер')
+}
+if (coursesAndDurationArray[5].monthDuration > 5){
+    console.log('Cупер')
+}
