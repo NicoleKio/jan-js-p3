@@ -127,22 +127,16 @@ let people = [
 let i = 0;
 while (i<people.length){
 
-    // let human = people[i];
-    // console.log(human);
-    // i++;
+    let human = people[i];
+    console.log(human);
+    i++;
 }
 
 
+//---------------------------------------------------------- ЦИКЛ DO WHILE -----------------------------------------------------------------
 
+// виконує, потім перевіряє чи є можливість далі іти
 
-
-
-
-
-
-
-
-
-
-
-
+do{
+    console.log('Kio');
+} while (false)
