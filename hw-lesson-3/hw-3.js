@@ -114,7 +114,7 @@ let agels = [
 ]
 
 let a = 0;
-while (a<agels.length){
+while (a<20){
     let agel = agels[a];
     document.write(`<div><h1>${a} - ${agel.name}</h1></div>`)
     a++;
@@ -147,13 +147,11 @@ document.write(`<h3>-----------------------------------------------</h3>`)
 //
 
 let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
-
+document.write(`<ul>`);
 for (const listOfItem of listOfItems) {
-    document.write(`<ul>
-                           <li>${listOfItem}</li>
-                    </ul>`)
+    document.write(`<li>${listOfItem}</li>`)
 }
-
+document.write(`</ul>`);
 
 document.write(`<h3>------------------------------------------</h3>`)
 
