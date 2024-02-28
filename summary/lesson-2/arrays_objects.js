@@ -13,7 +13,7 @@ console.log(arr);
 arr[4] = 'Adelaide';
 console.log(arr);  // додавання елементів вручну
 
-arr[arr.length] = 'Akhzert'; // додати щось в якості останнього елемента в масиві
+arr[arr.length] = 'Aqcert'; // додати щось в якості останнього елемента в масиві
 console.log(arr);
 
 

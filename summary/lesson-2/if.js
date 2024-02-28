@@ -47,7 +47,7 @@ if (color === 'red') {
 
 
 
-// && додає умови 
+// && додає умови / || або або
 
 let color2 = prompt('enter color')
 let isRoadClear = confirm('Is road free?');
