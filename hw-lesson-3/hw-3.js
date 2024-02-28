@@ -52,35 +52,44 @@ document.write(`<h3>----------------------------------------</h3>`)
 
 
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
+//
+// let people1 = [
+//     {name: 'Caroline', age: 24, status: false},
+//     {name: 'Amanda', age: 36, status: false},
+//     {name: 'Eric', age: 20, status: true},
+//     {name: 'Monalyne', age: 16, status: true},
+//     {name: 'Lyam', age: 22, status: true},
+//     {name: 'Joseph', age: 39, status: false},
+//     {name: 'Beatrice', age: 19, status: true},
+//     {name: 'Caroline', age: 24, status: false},
+//     {name: 'Amanda', age: 36, status: false},
+//     {name: 'Eric', age: 20, status: true},
+//     {name: 'Monalyne', age: 16, status: true},
+//     {name: 'Lyam', age: 22, status: true},
+//     {name: 'Joseph', age: 39, status: false},
+//     {name: 'Beatrice', age: 19, status: true},
+//     {name: 'Caroline', age: 24, status: false},
+//     {name: 'Amanda', age: 36, status: false},
+//     {name: 'Eric', age: 20, status: true},
+//     {name: 'Monalyne', age: 16, status: true},
+//     {name: 'Lyam', age: 22, status: true},
+//     {name: 'Joseph', age: 39, status: false},
+// ]
+//
+// let i = 0;
+// while (i<people1.length){
+//     let human1 = people1[i];
+//     document.write(`<div><h1>${human1.name}</h1></div>`)
+//     i++;
+// }
 
-let people1 = [
-    {name: 'Caroline', age: 24, status: false},
-    {name: 'Amanda', age: 36, status: false},
-    {name: 'Eric', age: 20, status: true},
-    {name: 'Monalyne', age: 16, status: true},
-    {name: 'Lyam', age: 22, status: true},
-    {name: 'Joseph', age: 39, status: false},
-    {name: 'Beatrice', age: 19, status: true},
-    {name: 'Caroline', age: 24, status: false},
-    {name: 'Amanda', age: 36, status: false},
-    {name: 'Eric', age: 20, status: true},
-    {name: 'Monalyne', age: 16, status: true},
-    {name: 'Lyam', age: 22, status: true},
-    {name: 'Joseph', age: 39, status: false},
-    {name: 'Beatrice', age: 19, status: true},
-    {name: 'Caroline', age: 24, status: false},
-    {name: 'Amanda', age: 36, status: false},
-    {name: 'Eric', age: 20, status: true},
-    {name: 'Monalyne', age: 16, status: true},
-    {name: 'Lyam', age: 22, status: true},
-    {name: 'Joseph', age: 39, status: false},
-]
+for (let i = 0; i < 20; i++) {
+    document.write(
+        `
+        <div><h1>Hello</h1></div
+        `
+    )
 
-let i = 0;
-while (i<people1.length){
-    let human1 = people1[i];
-    document.write(`<div><h1>${human1.name}</h1></div>`)
-    i++;
 }
 
 document.write(`<h3>-----------------------------------------------</h3>`)

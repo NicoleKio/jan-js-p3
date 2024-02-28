@@ -83,14 +83,34 @@ fLi('Have a nice day!')
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 
-function loopLi(textli, num) {
-  document.write(
-      <ul>
+function loopLi(textLi2, num) {
+    document.write(`<ul>`)
 
-      </ul>
 
-  )
+      for (let i = 0; i <`${num}`; i++){
+        document.write(` <li>${textLi2}</li> `)
+    }
+      document.write(`</ul>`);
+
 }
+
+loopLi('Lorem 123', 3);
+
+
+
+
+
+
+
+
+
+for (let i = 0; i <20; i++){
+    document.write(` <li>Hello</li> `)
+}
+
+
+
+
 
 
 
