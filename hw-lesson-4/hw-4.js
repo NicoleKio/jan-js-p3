@@ -102,14 +102,87 @@ loopLi('Lorem 123', 3);
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 
+let array = [1, 'Chara', 568, false, 'Doloria', 'Lacus', 87, true, false, 19]
 
+function listForArray(item) {
+    document.write(`<ol>`)
+
+    for (let itemElement of item) {
+        document.write(`<li>${itemElement}</li>`)
+    }
+    document.write(`</ol>`);
+    }
+
+listForArray(array);
 
 
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+
+let usersIdArray = [
+    {id: 0, name: 'Ray', age: 20},
+    {id: 1, name: 'Luise', age: 14},
+    {id: 2, name: 'Lacus', age: 19},
+    {id: 3, name: 'Chess', age: 18},
+];
+
+
+function docArr(arrId) {
+
+    for (let arrIdElement of arrId) {
+
+        document.write(`<div>`)
+
+        for (let arrIdElementKey in arrIdElement) {
+            document.write(`${arrIdElementKey} - ${arrIdElement[arrIdElementKey]}, `)
+        }
+        document.write(`</div>`)
+    }
+}
+
+docArr(usersIdArray);
+
+
+
+
 // - створити функцію яка повертає найменьше число з масиву
+
+let numArr = [652, 864, 5, 4, 686, 2, 937]
+
+function minNum(arrNum) {
+
+    for (let i = 0; i < arrNum.length; i++) {
+        if (arrNum[i][0] > arrNum[i][1]){
+           arrNum[i][0] = arrNum[i][1];
+        }
+    }
+
+}
+
+console.log(minNum(numArr))
+
+
+
+
+
+
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
+
+
+
+
+
+
+
+
+
+
+
+
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+
+
+
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
