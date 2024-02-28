@@ -53,11 +53,7 @@ group(people);
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
 
 function doc(text) {
-    document.write(
-        `
-        <p>${text}</p>
-        `
-    )
+    document.write(`<p>${text}</p>`)
 }
 
 doc('Okten is the best!')
@@ -99,7 +95,6 @@ loopLi('Lorem 123', 3);
 
 
 
-
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 
 let array = [1, 'Chara', 568, false, 'Doloria', 'Lacus', 87, true, false, 19]
@@ -131,12 +126,14 @@ function docArr(arrId) {
 
     for (let arrIdElement of arrId) {
 
-        document.write(`<div>`)
-
-        for (let arrIdElementKey in arrIdElement) {
-            document.write(`${arrIdElementKey} - ${arrIdElement[arrIdElementKey]}, `)
-        }
-        document.write(`</div>`)
+        document.write(`<div>${arrIdElement.id} ${arrIdElement.name} ${arrIdElement.age} </div>`);
+        //
+        // document.write(`<div>`)
+        //
+        // for (let arrIdElementKey in arrIdElement) {
+        //     document.write(`${arrIdElementKey} - ${arrIdElement[arrIdElementKey]}, `)
+        // }
+        // document.write(`</div>`)
     }
 }
 
@@ -151,15 +148,20 @@ let numArr = [652, 864, 5, 4, 686, 2, 937]
 
 function minNum(arrNum) {
 
-    for (let i = 0; i < arrNum.length; i++) {
-        if (arrNum[i][0] > arrNum[i][1]){
-           arrNum[i][0] = arrNum[i][1];
+    for (let i = 1; i < arrNum.length; i++) {
+
+        let num1 = arrNum[0];
+        let num2 = arrNum[i];
+        if (num1 > num2){
+            num1 = num2;
         }
+
+
+        console.log(num1, num2)
     }
 
 }
-
-console.log(minNum(numArr))
+(minNum(numArr))
 
 
 
