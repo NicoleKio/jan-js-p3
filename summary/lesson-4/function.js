@@ -80,8 +80,9 @@ console.log(calc(89, 5))
 
 
 
+// ВАРІАНТ 1 -----------
 
-// function commision(sum) {
+// function commission(sum) {
 //     let siteComm = sum / 100 * 50;
 //     let companyComm = sum / 100 * 25;
 //     let inFact = sum - siteComm - companyComm;
@@ -89,34 +90,44 @@ console.log(calc(89, 5))
 //
 // }
 //
-// let salary = commision(50000);
+// let salary = commission(50000);
 // console.log(salary);
 
 
 
-// function commision(sum) {
+// ВАРІАНТ 2 ------------------
+
+// function commission(sum) {
 //     let siteComm = sum / 100 * 50;
 //     let companyComm = sum / 100 * 25;
 //     return sum - siteComm - companyComm;
 //
 // }
 //
-// let salary = commision(50000);
+// let salary = commission(50000);
 // console.log(salary);
 
+
+//ВАРІАНТ 3 -----------------
 
 function altCalc(cash, per) {                      // скоротили ф однакові
     return cash/100*per;
 }
 
-function commision(sum) {                           //аргументом для ф може слугувати аргумент іншої ф
-    let siteComm = altCalc(sum, 50 );
-    let companyComm = altCalc(sum, 25);
-    return sum - siteComm - companyComm;
+// function commission(sum) {                           //аргументом для ф може слугувати аргумент іншої ф
+//     let siteComm = altCalc(sum, 50 );
+//     let companyComm = altCalc(sum, 25);
+//     return sum - siteComm - companyComm;
+//
+// }
+
+
+function commission(sum) {                                           // ГОСПОДИ ПРОСТИ, ВАРІАНТ 4, в оператор вставляємо просто дії
+    return sum - altCalc(sum, 50 ) - altCalc(sum, 25);
 
 }
 
-let salary = commision(100000);
+let salary = commission(100000);
 console.log(salary);
 
 
