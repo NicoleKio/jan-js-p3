@@ -201,17 +201,14 @@ console.log(sum([20, 30, 50, 100]))
 
 function swap(arr, index1, index2) {
 
-    let mass = arr[index2, index1]
-    for (let arrElement of arr) {
-        console.log(arrElement);
-        arrElement[0] = arrElement[index1];
-        arrElement[1] = arrElement[index2];
-    }
-    return mass;
-    }
+    let it1 = arr[index1];
+   let it2 = arr[index2];
+   arr[index1] = it2;
+   arr[index2] = it1;
+    return arr
+}
 
-console.log(swap([10, 20, 30], 0, 1))
-
+console.log(swap([1, 2, 3, 4], 0, 1));
 
 
 
@@ -219,3 +216,20 @@ console.log(swap([10, 20, 30], 0, 1))
 
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
+
+
+    function exchange(sumUAH,currencyValues,exchangeCurrency){
+
+        let numEx = sumUAH / exchangeCurrency;
+        return  `You've got ${numEx} ${currencyValues}`;
+    }
+
+console.log(exchange(10000, 'USD', 40));
+console.log(exchange(42000, 'eur', 42));
+
+
+
+
+
+
+
