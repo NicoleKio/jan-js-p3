@@ -122,46 +122,54 @@ let usersIdArray = [
 ];
 
 
-function docArr(arrId) {
+function objects(arr) {
 
-    for (let arrIdElement of arrId) {
-
-        document.write(`<div>${arrIdElement.id} ${arrIdElement.name} ${arrIdElement.age} </div>`);
-        //
-        // document.write(`<div>`)
-        //
-        // for (let arrIdElementKey in arrIdElement) {
-        //     document.write(`${arrIdElementKey} - ${arrIdElement[arrIdElementKey]}, `)
-        // }
-        // document.write(`</div>`)
+    for (let arrElement of arr) {
+        document.write(`<div>id - ${arrElement.id}, name is ${arrElement.name}, age - ${arrElement.age} y.o.</div>`)
     }
 }
+objects(usersIdArray)
 
-docArr(usersIdArray);
+
+
+document.write(`------------------------`)
+
+// варіант з forin
+function objects2(arr) {
+    for (let arrElement of arr) {
+
+    document.write(`<div>`)
+
+    for (let arrElementKey in arrElement) {
+        document.write(`${arrElementKey} - ${arrElement[arrElementKey]}, `)}
+
+    document.write(`</div>`)
+}
+}
+
+objects2(usersIdArray);
 
 
 
 
 // - створити функцію яка повертає найменьше число з масиву
 
-let numArr = [652, 864, 5, 4, 686, 2, 937]
+let numsArr = [652, 864, 5, 4, 686, 2, 937]
 
-function minNum(arrNum) {
+function minNum(arrNums) {
 
-    for (let i = 1; i < arrNum.length; i++) {
+    let mainMin = arrNums[0];
+    for (const arrNum of arrNums) {
 
-        let num1 = arrNum[0];
-        let num2 = arrNum[i];
-        if (num1 > num2){
-            num1 = num2;
-        }
-
-
-        console.log(num1, num2)
+        if (mainMin > arrNum){
+            mainMin = arrNum;}
     }
 
+    return mainMin;
+
 }
-(minNum(numArr))
+
+console.log(minNum(numsArr))
 
 
 
@@ -172,9 +180,16 @@ function minNum(arrNum) {
 
 
 
+function sum(arr) {
 
+    let firstNum = 0;
 
-
+    for (let arrElement of arr) {
+        firstNum = firstNum + arrElement;
+    }
+    return firstNum;
+}
+console.log(sum([20, 30, 50, 100]))
 
 
 
@@ -183,6 +198,22 @@ function minNum(arrNum) {
 
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+
+function swap(arr, index1, index2) {
+
+    let mass = arr[index2, index1]
+    for (let arrElement of arr) {
+        console.log(arrElement);
+        arrElement[0] = arrElement[index1];
+        arrElement[1] = arrElement[index2];
+    }
+    return mass;
+    }
+
+console.log(swap([10, 20, 30], 0, 1))
+
+
+
 
 
 
