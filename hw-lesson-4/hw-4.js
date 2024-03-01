@@ -217,15 +217,21 @@ console.log(swap([1, 2, 3, 4], 0, 1));
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 
-
-    function exchange(sumUAH,currencyValues,exchangeCurrency){
-
-        let numEx = sumUAH / exchangeCurrency;
-        return  `You've got ${numEx} ${currencyValues}`;
+function exchange(sumUAH,currencyValues,exchangeCurrency){
+    for (const valueC of currencyValues) {
+        if (exchangeCurrency === valueC.currency){
+            return sumUAH / valueC.value;
+        }
     }
+}
 
-console.log(exchange(10000, 'USD', 40));
-console.log(exchange(42000, 'eur', 42));
+console.log(exchange(10000,
+    [
+        {currency: 'USD', value: 40},
+        {currency: 'EUR', value: 42}
+    ],
+    'USD'));
+
 
 
 
