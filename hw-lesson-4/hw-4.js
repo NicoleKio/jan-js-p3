@@ -84,7 +84,7 @@ function loopLi(textLi2, num) {
     document.write(`<ul>`)
 
 
-      for (let i = 0; i <`${num}`; i++){
+      for (let i = 0; i < num; i++){
         document.write(` <li>${textLi2}</li> `)
     }
       document.write(`</ul>`);
@@ -231,11 +231,5 @@ console.log(exchange(10000,
         {currency: 'EUR', value: 42}
     ],
     'USD'));
-
-
-
-
-
-
 
 
