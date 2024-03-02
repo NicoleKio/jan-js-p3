@@ -70,22 +70,56 @@ ulList('Text Kio')
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 
+const ulList3 = (item, num) => {
+    document.write(`<ul>`)
+    for (let i = 0; i < num; i++) {
+        document.write(`<li>${item}</li>`)
+    }
+    document.write(`</ul>`)
+}
+
+ulList3('Adelaide de Azu', 3);
+
 
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 
+let array = [53, 'Claude', 'Chess', 5, false, true, 88, 'Elsa']
+
+const arrList = mainArr => {
+    document.write(`<ol>`)
+    for (let mainArrElement of mainArr) {
+        document.write(`<li>${mainArrElement}</li>`)
+    }
+    document.write(`</ol>`)
+}
+
+arrList(array)
 
 
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 
+let users = [
+    {id: 0, name: 'Ray', age: 20, status: false},
+    {id: 1, name: 'Luise', age: 14, status: false},
+    {id: 2, name: 'Lacus', age: 19, status: true},
+    {id: 3, name: 'Chess', age: 18, status: true},
+];
 
+const usersArr = arr => {
+    for (let arrElement of arr) {
+        document.write(`<div> id - ${arrElement.id}, name - ${arrElement.name}, age - ${arrElement.age}</div>`)
+    }
+}
+
+usersArr(users)
 
 
 
 // - створити функцію яка повертає найменьше число з масиву
 
-
+let []
 
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
 
