@@ -92,7 +92,8 @@ console.log(arr4);
 
 
 let arr5 = [11, 22, 33, 44, 55, 66];
-console.log(arr5.splice(1, 3, 'Lyam', 'Ray', 'Monalyne'))    // виведе що вирізали
+// console.log(arr5.splice(1, 3,'Lyam', 'Ray', 'Monalyne'))    // виведе що вирізали
+console.log(arr5.splice(1, 3,999, 1000))
 console.log(arr5)                                                                   // виведе масив з оновленими елементами
 
 
