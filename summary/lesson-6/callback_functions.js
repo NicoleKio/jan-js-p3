@@ -138,6 +138,8 @@ let usersSort = usersPassword.sort((us1,us2) => {
 
 console.log(usersSort);
 
+console.log(usersPassword === usersSort);
+
 // порівняння за спаланням
 let usersSort2 = usersPassword.sort((us1,us2) => {
     return us2.age - us1.age;
