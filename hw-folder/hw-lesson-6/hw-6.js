@@ -30,8 +30,8 @@ console.log(str.trim());
 
 
 let str2 = 'Ревуть воли як ясла повні';
-const stringToarray= (value) => value.split(' ');
-let arr = stringToarray(str2);
+const stringToArray= (value) => value.split(' ');
+let arr = stringToArray(str2);
 console.log(arr);
 
 
