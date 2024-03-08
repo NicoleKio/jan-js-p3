@@ -292,9 +292,10 @@ console.log(coursesArray.reduce((arr, element) => {
 // --написати пошук всіх об'єктів, в який в modules є docker
 
 console.log(coursesArray.reduce((arr2, element2) => {
-    if (element2.modules.includes('docker')){
-        arr2.push(element2)
-    }
+    // if (element2.modules.includes('docker')){
+    //     arr2.push(element2)
+    // }
+    arr.push(element2.modules.find('docker'))
     return arr2;
 }, []));
 
