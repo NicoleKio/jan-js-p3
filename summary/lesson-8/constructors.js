@@ -59,11 +59,11 @@ user3.greeting()
 // створюємо прототип якоїсь характеристики КОНСТРУКТОРА
 // тепер будь який об'єкт, створений тим же конструктором буде мати таку ж характеристику
 
-Constructor2.prototype.firstSon = function (){
+Constructor.prototype.firstSon = function (){
     return `This student is ${this.name}'s child`                   // this буде звертатися до нашого майбутнього об'єкта
 }
 
-console.log(user2.firstSon());
+console.log(user1.firstSon());
 
 
 
@@ -98,6 +98,8 @@ user1.greet = function (msg) {
 }
 
 console.log(user1.greet('agel'));
+console.log(user1.greet('agel'));
+console.log(user4.firstSon().toUpperCase())
 console.log(user1.greet.apply(user4, ['human']));
 console.log(user1.greet.apply(user3, ['agel']));
 console.log(user1.greet.apply(user2, ['human']));
