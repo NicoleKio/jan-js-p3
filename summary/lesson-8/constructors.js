@@ -92,6 +92,7 @@ console.log(user4);
 
 console.log('-----------------------------------------------------')
 
+
 // створюємо нову характеристику ТІЛЬКИ для ОБ'ЄКТУ Долорія
 user1.greet = function (msg) {
     return `${this.name} is ${msg} from Paradise for Nothing`
@@ -108,24 +109,29 @@ console.log(user1.greet.apply(user5, ['agel']))
 console.log(user5)
 console.log(user1.firstSon.apply(user5))
 console.log(user1.greet.apply(user5, ['agel']))
-//------------------------------------------------------------ BIND -----------------------------------------------------------------
+
+console.log('-----------------------------------------------------')
+
+// call аналог, але там можна аргументи через кому
+
+console.log(user1.greet.call(user5, 'agel'))
+console.log(user1.greet.call(user1, 'agel'))
+console.log(user1.greet.call(user2, 'agel'))
+console.log(user1.firstSon.call(user2, 'agel'))
+
+console.log('-----------------------------------------------------')
+
+let GreetCopy = user1.greet.bind(user5);
+console.log(GreetCopy('HHHHHHH'));
+
+// let GreetCopy2 = user1.greet.bind(user1);
+// console.log(GreetCopy2('HHHHHHH'));
+
+let GreetCopy2 = user1.greet.bind(user1, 'HHHHHHH');
+console.log(GreetCopy2());
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//ИТОХ!!! Якщо створюємо від конструктора прототипом, то всі подальші об'єкти  цього конструктора зможуть юзати створену характеристику.
+// Якщо від об'єкта, то це характеристика тільки на об'єкті, іншим лише через apply
 
 
