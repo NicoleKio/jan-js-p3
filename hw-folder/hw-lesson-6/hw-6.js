@@ -163,7 +163,8 @@ console.log(cards.filter(value => value.color === 'red'));
 console.log(cards.filter(value => value.cardSuit === 'diamond'));
 
 // - всі трефи від 9 та більше
-console.log(cards.filter(value => value.cardSuit === 'clubs' && value.value >= '9'));
+console.log(cards.filter(card => card.cardSuit === 'clubs' && ['9', '10', 'jack', 'queen', 'king', 'ace'].includes(card.value)));
+
 
 
 // {

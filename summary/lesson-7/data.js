@@ -21,16 +21,16 @@ console.log(dataCr)
 
 //------------------------------------------------------- ОБРОБКА ПОМИЛОК --------------------------------------------------------------------
 
-console.log('start')
-    try{
-        console.log(a);
-    } catch (e) {
-        console.log(e)
-    }finally {
-        console.log('Kio')
-    }
-
-console.log('end')
+// console.log('start')
+//     try{
+//         console.log(a);
+//     } catch (e) {
+//         console.log(e)
+//     }finally {
+//         console.log('Kio')
+//     }
+//
+// console.log('end')
 
 
 // function calc (a, b){
@@ -46,11 +46,11 @@ console.log('end')
 
 //------------------------------------- ОПЕРАТОР ОПЦІОНАЛЬНОЇ ПОСЛІДОВНОСТІ ----------------------------------------------------------------
 // ?. перевіряє, що якщо щось не так то далі навіть йти не буде / ахист від потенційно можливих помилок
-
-let userEl = undefined;
-userEl?.name?.firstName;
-
-
+//
+// let userEl = undefined;
+// userEl?.name?.firstName;
+//
+//
 
 
 //------------------------------------------------ ДЕСТРУКТУРИЗАЦІЯ ------------------------------------------------------------------
@@ -76,21 +76,21 @@ userCh.foo();
 
 
 
+//
+// let userYu = {
+//     nameYu: 'Yukisa',
+//     ageYu: 18,
+//     fooYu() {
+//         console.log('Foo')                     // this - це наша змінна об'єкту. з якого ми все беремо
+//     }
+// }
 
-let userYu = {
-    nameYu: 'Yukisa',
-    ageYu: 18,
-    fooYu() {
-        console.log('Foo')                     // this - це наша змінна об'єкту. з якого ми все беремо
-    }
-}
 
-
-
-// можна декомпоновувати об'єкти / брати з них що треба і юзати
-let {nameYu, ageYu} = userYu;
-console.log(nameYu)
-
+//
+// // можна декомпоновувати об'єкти / брати з них що треба і юзати
+// let {nameYu, ageYu} = userYu;
+// console.log(nameYu)
+//
 
 
 // можна з усього об'єкта витягувати щось конкретне
@@ -105,11 +105,11 @@ asd({a: 456, name: 'Lacus'});           // з усієї ф витягнув л�
 
 
 // можна проголошувати деструктуровані вже декларовані характеристики, переназиваючи їх.
-
-let {name: user2Name, age:user2Age, friend:{name:frName}, friend} = userCh;        //беремо ім'я з Юзера Чесс і переназвавши змінну декларуємо його знову
-console.log(user2Name);
-console.log(frName);
-console.log(friend);
+//
+// let {name: user2Name, age:user2Age, friend:{name:frName}, friend} = userCh;        //беремо ім'я з Юзера Чесс і переназвавши змінну декларуємо його знову
+// console.log(user2Name);
+// console.log(frName);
+// console.log(friend);
 
 
 //--------------------------------------------------------
@@ -119,20 +119,20 @@ let [a, , c] = [1, 2, 3];
 console.log(a, c);
 
 
-let people = [
-    {name1: 'Caroline', age1: 24, status: false},
-    {name1: 'Amanda', age1: 36, status: false},
-    {name1: 'Eric', age1: 20, status: true},
-    {name1: 'Monalyne', age1: 16, status: true},
-    {name1: 'Lyam', age1: 22, status: true},
-    {name1: 'Joseph', age1: 39, status: false},
-    {name1: 'Beatrice', age1: 19, status: true},
-]
-
-let [{name1, age1, status}, person2] = people;
-console.log(person2);
-console.log(name1)
-
+// let people = [
+//     {name1: 'Caroline', age1: 24, status: false},
+//     {name1: 'Amanda', age1: 36, status: false},
+//     {name1: 'Eric', age1: 20, status: true},
+//     {name1: 'Monalyne', age1: 16, status: true},
+//     {name1: 'Lyam', age1: 22, status: true},
+//     {name1: 'Joseph', age1: 39, status: false},
+//     {name1: 'Beatrice', age1: 19, status: true},
+// ]
+//
+// let [{name1, age1, status}, person2] = people;
+// console.log(person2);
+// console.log(name1)
+//
 
 
 //-------------------------------------------------- SPRED -----------------------------------------------------------

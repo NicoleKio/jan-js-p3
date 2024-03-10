@@ -114,7 +114,9 @@ console.log(arr5);                // починаючи з 4го індексу 
 console.log(arr5.includes(44))
 console.log(arr5.includes(11))
 
-
+// includes можна використовувати по-ріному. Перевіряючи, чи є в певному об'єкті якесь значення і навпаки, чи є якесь значення в об'єкті.
+console.log('black'.includes(cards[0].color))
+console.log(cards[0].color.includes('red'))
 
 
 
