@@ -15,7 +15,7 @@ let user1 = new Constructor('Doloria', 39, false);
 
 
 
-// існує 2 підходи: КОМПОЗИЦІЯ І АГЕГАЦІЯ
+// існує 2 підходи: КОМПОЗИЦІЯ І АГРЕГАЦІЯ
 // v1
 
 function Constructor2(name, age, status, son) {
