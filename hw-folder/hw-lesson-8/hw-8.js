@@ -84,13 +84,13 @@ console.log(`---------------Constructor---------------`);
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 
-function Cars(model, brand, yearReal, maxSpeed, engineCap, driver){
+function Cars(model, brand, yearReal, maxSpeed, engineCap, ...add){
     this.model = model;
     this.brand = brand;
     this.yearReal = yearReal;
     this.maxSpeed = maxSpeed;
     this.engineCap = engineCap;
-    this.driver = driver;
+    this.driver = add;
 
     this.drive = function (){console.log(`їдемо зі швидкістю ${maxSpeed} км на годину`)};
     this.info = function (){
@@ -104,10 +104,10 @@ function Cars(model, brand, yearReal, maxSpeed, engineCap, driver){
     }
 
     this.addDriver = function (name, age) {
-        let driverMan = {name, age}
-            this.driver = [];
-            this.driver.push(driverMan)
+        let ourDriver = {name, age}
+            this.driver.push(ourDriver)
     }
+
     }
 }
 
@@ -120,9 +120,8 @@ car1.info()
 car1.changeYear(2000)
 car1.info()
 car1.addDriver('Lola', 20);
-car1.info()
+car1.addDriver('Lynett', 22);
 console.log(car1)
-
 
 
 
@@ -148,7 +147,7 @@ class Car2 {
     }
 }
 
-let car2 = new Car2('i8','BMW', 2018, 250, 1,5);
+let car2 = new Car2('i8','BMW', 2018, 250, 1.5);
 console.log(car2);
 
 
@@ -156,14 +155,32 @@ console.log(car2);
 class CarAdd extends Car2 {
     constructor(...add) {
         super(...add)
-        this.drive = function (){console.log(`їдемо зі швидкістю ${this.maxSpeed} км на годину`)
+        this.drive = function (){console.log(`їдемо зі швидкістю ${this.maxSpeed} км на годину`);}
+
+        this.info = function (){
+            console.log(`модель: ${this.model}, виробник: ${this.brand}, рік випуску: ${this.yearReal}, максимальна швидкість: ${this.maxSpeed}, об'єм двигуна: ${this.engineCap}`)}
+
+        this.increaseMaxSpeed = function (newSpeed) {
+            this.maxSpeed = this.maxSpeed + newSpeed;}
+
+        this.changeYear = function (newValue){
+                this.yearReal = newValue;}
+
+        this.addDriver = function (name, age) {
+                    let ourDriver = {name, age};
+                    this.driver = [];
+                    this.driver.push(ourDriver)
+                }
     }
-}}
+}
 
-let newAddCar = new CarAdd('i8','BMW', 2018, 250, 1,5);
+let newAddCar = new CarAdd('i8','BMW', 2018, 250, 1.5);
 newAddCar.drive();
-
-
+newAddCar.info();
+newAddCar.increaseMaxSpeed(50);
+newAddCar.changeYear(1969);
+newAddCar.addDriver('Lina', 30);
+console.log(newAddCar);
 
 
 
@@ -172,3 +189,5 @@ newAddCar.drive();
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+
+
