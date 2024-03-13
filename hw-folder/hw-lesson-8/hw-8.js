@@ -84,30 +84,27 @@ console.log(`---------------Constructor---------------`);
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 
-function Cars(model, brand, yearReal, maxSpeed, engineCap, ...add){
+function Cars(model, brand, yearReal, maxSpeed, engineCap, driver = []){
     this.model = model;
     this.brand = brand;
     this.yearReal = yearReal;
     this.maxSpeed = maxSpeed;
     this.engineCap = engineCap;
-    this.driver = add;
+    this.driver = driver;
 
     this.drive = function (){console.log(`їдемо зі швидкістю ${maxSpeed} км на годину`)};
     this.info = function (){
-        console.log(`модель: ${model}, виробник: ${brand}, рік випуску: ${yearReal}, максимальна швидкість: ${maxSpeed}, об'єм двигуна: ${engineCap}`)};
+        console.log(`модель: ${model}, виробник: ${brand}, рік випуску: ${yearReal}, максимальна швидкість: ${maxSpeed}, об'єм двигуна: ${engineCap}, водій: ${driver}`)};
 
-    this.increaseMaxSpeed = function (newSpeed){
+    this.increaseMaxSpeed = function (newSpeed) {
         maxSpeed = this.maxSpeed + newSpeed;
-
+    }
     this.changeYear = function (newValue){
         yearReal = newValue;
     }
 
-    this.addDriver = function (name, age) {
-        let ourDriver = {name, age}
-            this.driver.push(ourDriver)
-    }
-
+    this.addDriver = function (driver){
+        this.driver.push(driver)
     }
 }
 
@@ -119,9 +116,8 @@ car1.increaseMaxSpeed(100);
 car1.info()
 car1.changeYear(2000)
 car1.info()
-car1.addDriver('Lola', 20);
-car1.addDriver('Lynett', 22);
-console.log(car1)
+car1.addDriver('Lola');
+car1.info()
 
 
 
@@ -138,12 +134,13 @@ console.log(`-------------Class-----------------`);
 
 
 class Car2 {
-    constructor(model, brand, yearReal, maxSpeed, engineCap) {
+    constructor(model, brand, yearReal, maxSpeed, engineCap, driver = []) {
         this.model = model;
         this.brand = brand;
         this.yearReal = yearReal;
         this.maxSpeed = maxSpeed;
         this.engineCap = engineCap;
+        this.driver = driver;
     }
 }
 
@@ -158,7 +155,7 @@ class CarAdd extends Car2 {
         this.drive = function (){console.log(`їдемо зі швидкістю ${this.maxSpeed} км на годину`);}
 
         this.info = function (){
-            console.log(`модель: ${this.model}, виробник: ${this.brand}, рік випуску: ${this.yearReal}, максимальна швидкість: ${this.maxSpeed}, об'єм двигуна: ${this.engineCap}`)}
+            console.log(`модель: ${this.model}, виробник: ${this.brand}, рік випуску: ${this.yearReal}, максимальна швидкість: ${this.maxSpeed}, об'єм двигуна: ${this.engineCap}, водій: ${this.driver}`)}
 
         this.increaseMaxSpeed = function (newSpeed) {
             this.maxSpeed = this.maxSpeed + newSpeed;}
@@ -166,11 +163,9 @@ class CarAdd extends Car2 {
         this.changeYear = function (newValue){
                 this.yearReal = newValue;}
 
-        this.addDriver = function (name, age) {
-                    let ourDriver = {name, age};
-                    this.driver = [];
-                    this.driver.push(ourDriver)
-                }
+        this.addDriver = function (driver){
+            this.driver.push(driver)
+        }
     }
 }
 
@@ -179,8 +174,8 @@ newAddCar.drive();
 newAddCar.info();
 newAddCar.increaseMaxSpeed(50);
 newAddCar.changeYear(1969);
-newAddCar.addDriver('Lina', 30);
-console.log(newAddCar);
+newAddCar.addDriver('Lina');
+newAddCar.info()
 
 
 
@@ -226,8 +221,7 @@ console.log(prince)
 
 
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
-    function search (arr)
-{
+    function search (arr) {
     for (const girl of arr) {
         if (girl.footSize === prince.bootSize) {
             return girl
