@@ -185,9 +185,59 @@ console.log(newAddCar);
 
 
 
+
+
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
+
+class Cinderella {
+    constructor(name, age, footSize) {
+        this.name = name;
+        this.age = age;
+        this.footSize = footSize;
+    }
+}
+
+let girls = [
+    new Cinderella('Doloria', 38, 42),
+    new Cinderella('Chess', 19, 39),
+    new Cinderella('Caroline', 24, 39),
+    new Cinderella('Inesa', 33, 39),
+    new Cinderella('Sophy', 28, 41),
+    new Cinderella('Yukisa', 19, 38),
+    new Cinderella('Adelaide', 2000, 42),
+    new Cinderella('Elsa', 40, 39),
+    new Cinderella('Beatrice', 20, 38),
+    new Cinderella('Luise', 13, 36),
+]
+
+
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+
+class Prince {
+    constructor(name, age, bootSize) {
+        this.name = name;
+        this.age = age;
+        this.bootSize = bootSize;
+    }
+}
+
+let prince = new Prince('Daniele', 20, 38);
+console.log(prince)
+
+
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
+    function search (arr)
+{
+    for (const girl of arr) {
+        if (girl.footSize === prince.bootSize) {
+            return girl
+        }
+    }
+}
+
+console.log(search(girls));
+
+
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 
-
+console.log(girls.find(ideal => ideal.footSize === prince.bootSize));
