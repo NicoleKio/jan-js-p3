@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+
+<h1>DOM title</h1>
+<ul class="menu" id="list-1">
+    <li>1 1</li>
+    <li>1 2</li>
+    <li>1 3</li>
+    <li>1 4</li>
+    <li>1 5</li>
+</ul>
+
+<ul class="menu" id="list-2">
+    <li>2 1</li>
+    <li>2 2</li>
+    <li>2 3</li>
+    <li>2 4</li>
+    <li>2 5</li>
+</ul>
+
+
+<script>
+
+    // id - знайде завждди тільки першу
+    let ul1 = document.getElementById('list-1');
+    console.log(ul1)
+
+    // class
+    let menuCollection = document.getElementsByClassName('menu')
+    console.log(menuCollection);
+    // шукати та звертатися по індексам або через ітерацію, бо по класам повертає псевдомасив. З ним нічого не зробиш.
+
+    for (const menuCollectionElement of menuCollection) {
+        console.log(menuCollectionElement);
+    }
+
+
+
+    // // DOM
+    // console.log(document);
+    //
+    // //document допомагає шукати щось всередині нашого документу. Шукаємо від документу або від знайденого елемента
+    // // будь який тег в нашому документі є окремим об'єктом
+    //
+    // console.log(document.head);
+    //
+    // console.log(document.head.children);  // поверне HTMLCollection - псевдомасив, ітерується, але не являється масивом
+    //
+    // console.log(document.body);
+    // console.log(document.body.innerHTML);   //репрезентує наповнення body в html форматі
+</script>
+
+</body>
+</html>
