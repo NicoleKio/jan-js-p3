@@ -5,17 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-
-<div id="target" xxx="Chess">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, architecto cum, dicta ea enim ex ipsa non odio
+<h1>Before</h1>
+<div id="target" xxx="Chess" class="kio">
+<!--  Yukisa  -->
+    <b>Lorem ipsum dolor</b> sit amet, consectetur <span>adipisicing elit.</span> Alias, architecto cum, dicta ea enim ex ipsa non odio
     officia, provident sequi vel. Aspernatur autem eaque eligendi magni reprehenderit ullam ut.
 </div>
-
+<div xxx="Chess" class="kio">
+    <!--  Yukisa  -->
+    <b>Lorem ipsum dolor</b> sit amet, consectetur <span>adipisicing elit.</span> Alias, architecto cum, dicta ea enim ex ipsa non odio
+    officia, provident sequi vel. Aspernatur autem eaque eligendi magni reprehenderit ullam ut.
+</div>
+<h1>After</h1>
 
 <script>
     let target = document.getElementById('target');
     console.log(target);
-
 
 
 
@@ -25,7 +30,7 @@
 
     //-------------------------------------------- ЗАМІНЯЄ НАПОВНЕННЯ --------------------------------------------------------
 
-    target.innerText = 'Yukisa Kio';
+    // target.innerText = 'Yukisa Kio';
 
 
 //------------------------------------------ ДОСТУП ДО СТИЛІЗАЦІЇ -----------------------------------------------------//
@@ -60,35 +65,45 @@
     console.log(target.getAttribute('style'));
 
 
+
 //------------------------------------------------ МОЖЕМО СЕТНУТИ АТРИБУТ ---------------------------------------------------------
 // або замінити
 
 target.setAttribute('id', 'goal');
     console.log(target.getAttribute('id'));
 
+    target.setAttribute('id', 'target');
+    console.log(target.getAttribute('id'));
 
 
 
+//----------------------------------------------------- ЗНАХОДИМО ЕЛЕМЕНТ --------------------------------------------------
+// знайде елемент ДО вашого
+    console.log(target.previousElementSibling);
+
+// повертає наступний елемент після нашого
+    console.log(target.nextElementSibling);
+
+// знайдемо дочірні елементи
+    console.log(target.children);     // html Objects
+    console.log(target.childNodes)     // Node
 
 
+    // target.innerText = '<b>asdfg</b>'          // сприймає теги як текст і виводить в документ
+    target.innerHTML = '<p>Lacus Wiagarty</p>'      // html сприймається як html
+
+// по об'єкту можемо повернути нашу обгортку як елемент тексту в документі
+    console.log(target.outerHTML);
 
 
+//------------------------------------------- ЗНАХОДИМО ЕЛЕМЕНТИ НЕ ПО ID ---------------------------------------------
+// робимо щось з елементами в процесі ітерації
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    let kioCollection = document.getElementsByClassName('kio');  //виводимо колекцію
+    for (const kioElement of kioCollection) {
+        kioElement.innerText = 'Nicole'  // змінюємо наповнення в елементах дівів
+        kioElement.classList.add('qqq')
+    }
 
 
 
