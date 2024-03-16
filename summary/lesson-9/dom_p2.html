@@ -6,6 +6,20 @@
 </head>
 <body>
 
+// // DOM
+// console.log(document);
+//
+// //document допомагає шукати щось всередині нашого документу. Шукаємо від документу або від знайденого елемента
+// // будь який тег в нашому документі є окремим об'єктом
+//
+// console.log(document.head);
+//
+// console.log(document.head.children);  // поверне HTMLCollection - псевдомасив, ітерується, але не являється масивом
+//
+// console.log(document.body);
+// console.log(document.body.innerHTML);   //репрезентує наповнення body в html форматі
+
+
 <h1>DOM title</h1>
 <ul class="menu" id="list-1">
     <li>1 1</li>
@@ -40,19 +54,47 @@
     }
 
 
+    // tag - htmlCollection, знаходить УСІ потрібні теги з документу
+    let ulTAg = document.getElementsByTagName('ul');
+    let liTAg = document.getElementsByTagName('li');
+    console.log(ulTAg);
+    console.log(liTAg);
 
-    // // DOM
-    // console.log(document);
-    //
-    // //document допомагає шукати щось всередині нашого документу. Шукаємо від документу або від знайденого елемента
-    // // будь який тег в нашому документі є окремим об'єктом
-    //
-    // console.log(document.head);
-    //
-    // console.log(document.head.children);  // поверне HTMLCollection - псевдомасив, ітерується, але не являється масивом
-    //
-    // console.log(document.body);
-    // console.log(document.body.innerHTML);   //репрезентує наповнення body в html форматі
+
+
+    // якщо треба з конкретного масиву, ми його витягуємо і юзаємо внутрішній пошук
+
+    let list1 = document.getElementById('list-1')
+    console.log(list1)
+    let innerSearch = list1.getElementsByTagName('li');     //  витягує колекцію
+    console.log(innerSearch);
+
+
+
+    //-------------------------------------------------------------------------------- популярна, але повільніша / не сильно
+    // query ЧЕРЕЗ CSS СЕЛЕКТОРИ! НІЧОНО НЕ ЗМІНЮЄТЬСЯ.
+    // знаходить лише 1 елемент (перший)  по певному css селекторі
+    console.log(document.querySelector('ul'));
+    console.log(document.querySelector('.menu'));
+    console.log(document.querySelector('body .menu'));
+
+    // знаходить усі по певному селектору / виведе NodeList - список вузлів!!! це ТЕКСТ, КОМЕНТАР і т.д.
+    // Node - інтерфейс/абстракція, яка має певні характеристики і певні методи, які може виконувати.
+    // htmlElement - що находили вище, є нащадком вузла. Має ті самі характеристики і поведінуи, що і у вузла, але і є щось своє.
+    // це як наслідування. Хтмл екстендить клас Ноду.
+
+    console.log(document.querySelectorAll('ul'));
+
+
+    // різниця з в тому, що є жива колекція (трекає оновлення), і нежива - робить просто знімок під час рендерінгу
+
+    console.log(document.querySelectorAll('.menu:nth-child(2)>li'));
+    let qList = document.querySelectorAll('#list-2>li');
+
+    for (const qListElement of qList) {
+        console.log(qListElement);
+    }
+
 </script>
 
 </body>
