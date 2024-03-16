@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="target" xxx="Chess">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, architecto cum, dicta ea enim ex ipsa non odio
+    officia, provident sequi vel. Aspernatur autem eaque eligendi magni reprehenderit ullam ut.
+</div>
+
+
+<script>
+    let target = document.getElementById('target');
+    console.log(target);
+
+
+
+
+// - ----------------------------------------- ДОСТУПИТЬСЯ ДО ТЕКСТУ -------------------------------------------------------------
+    console.log(target.innerText);    // доступиться до внутрішнього тексту в елементі
+
+
+    //-------------------------------------------- ЗАМІНЯЄ НАПОВНЕННЯ --------------------------------------------------------
+
+    target.innerText = 'Yukisa Kio';
+
+
+//------------------------------------------ ДОСТУП ДО СТИЛІЗАЦІЇ -----------------------------------------------------//
+// по факту робить інлайн стилі. Переббити це буде важко
+// варто вертатися до класліста, додати якийсь клас і потім напряму описати в css
+
+    target.style.background = 'silver';
+
+    console.log(target.classList);  // повертає список усіх класів
+
+    target.classList.add('foo')       // додає новий клас
+    target.classList.add('bar')
+
+    console.log(target.classList.keys());           // повертає ключі класів, які можна ітерувати
+
+    console.log(target.classList.item(0));           // витягує певний клас за індексом
+
+    console.log(target.classList.contains('bar'));            // перевіряє існування класу, повертає булю
+
+    // перемикач
+    console.log(target.classList.toggle('bar'));          // якщо це існцє, то воно не буде існувати. Або додасть те, чого не було
+    console.log(target.classList.toggle('asd'));
+
+
+
+//------------------------------------------------ ВИТАГУЄМО АТРИБУТ ------------------------------------------------------
+// поверне інфу всередині, будь яку про об'єкт
+
+    console.log(target.getAttribute('xxx'));
+    console.log(target.getAttribute('id'));
+    console.log(target.getAttribute('class'));
+    console.log(target.getAttribute('style'));
+
+
+//------------------------------------------------ МОЖЕМО СЕТНУТИ АТРИБУТ ---------------------------------------------------------
+// або замінити
+
+target.setAttribute('id', 'goal');
+    console.log(target.getAttribute('id'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
