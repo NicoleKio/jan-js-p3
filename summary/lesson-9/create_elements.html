@@ -22,9 +22,9 @@
 // append - приймає n-ну к-сть елементів
 //appendChild - приймає 1 елемент
 
-    let el1 = document.createElement('h2');
+    let el1 = document.createElement('h2');          //створення елементу
     el1.innerText = 'Paradise for Nothing';         // наповнюємо створений елемент
-    document.body.appendChild(el1);
+    document.body.appendChild(el1);               // кажемо боді приймати наш новий елемент
 
 
 // робимо розмітку під отриману модель даних
@@ -40,13 +40,13 @@
     {name: 'Aqcert', age: 22, status: false},
     {name: 'Doloria', age: 34, status: false},
     {name: 'Vitold', age: 43, status: false},
-    {name: 'Claude', age: 26, status: true},];
+    {name: 'Claude', age: 26, status: true},];                              // є масив, який ми ітеруємо
 for (const agel of agels) {
 
-    let agelsDiv = document.createElement('li'); //div
-    agelsDiv.classList.add('user');
-    agelsDiv.innerText = agel.name;
-    mainUsers.appendChild(agelsDiv);
+    let agelsDiv = document.createElement('li'); //div          / створюємо змінну як ячейку для кожного елемента з проітерованого масиву
+    agelsDiv.classList.add('user');                           //додаємо ячейці з об'єктом клас, аби стилізувати по ньому
+    agelsDiv.innerText = agel.name;                            //наповлюємо ячейку текстом
+    mainUsers.appendChild(agelsDiv);                          // поміщаємо ячейку в аш масив
 
 }
 
