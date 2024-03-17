@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .user{
+            background: #d89aff;
+            margin-bottom: 5px;
+            padding-left: 10px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="users"> </div>
+
+<script>
+
+//----------------------------------------------------------- СТВОРЕННЯ ЕЛЕМЕНТІВ -------------------------------------------------------------
+// відразу в структурі не з'явиться
+// append - приймає n-ну к-сть елементів
+//appendChild - приймає 1 елемент
+
+    let el1 = document.createElement('h2');
+    el1.innerText = 'Paradise for Nothing';         // наповнюємо створений елемент
+    document.body.appendChild(el1);
+
+
+// робимо розмітку під отриману модель даних
+    let mainUsers = document.getElementsByClassName('users')[0];
+
+    let agels = [
+    {name: 'Yukisa', age: 18, status: true},
+    {name: 'Lacus', age: 19, status: true},
+    {name: 'Chess', age: 19, status: true},
+    {name: 'Lilith', age: 27, status: false},
+    {name: 'Seraph', age: 32, status: false},
+    {name: 'Hran', age: 35, status: false},
+    {name: 'Aqcert', age: 22, status: false},
+    {name: 'Doloria', age: 34, status: false},
+    {name: 'Vitold', age: 43, status: false},
+    {name: 'Claude', age: 26, status: true},];
+for (const agel of agels) {
+
+    let agelsDiv = document.createElement('li'); //div
+    agelsDiv.classList.add('user');
+    agelsDiv.innerText = agel.name;
+    mainUsers.appendChild(agelsDiv);
+
+}
+
+//--------------------------------------------------------------------------------------
+
+let people = [
+    {name: 'Caroline', age: 24, status: false},
+    {name: 'Amanda', age: 36, status: false},
+    {name: 'Eric', age: 20, status: true},
+    {name: 'Monalyne', age: 16, status: true},
+    {name: 'Lyam', age: 22, status: true},
+    {name: 'Joseph', age: 39, status: false},
+    {name: 'Beatrice', age: 19, status: true},
+]
+
+for (const person of people) {
+    let personDiv = document.createElement('div');
+
+    let h2Per = document.createElement('h2')
+    h2Per.innerText = person.name;
+
+    let pPerson = document.createElement('p');
+    pPerson.innerText = person.status + ' ' + person.age;
+
+    personDiv.append(h2Per, pPerson);
+
+    document.body.appendChild(personDiv);
+}
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
