@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<!--ФОРМИ-->
+<!-- action - сегмент, на який ми будемо відправляти свої дані / файл або лінка-->
+<!-- форма повинна мати id або name-->
+
+<form action="" name="yuu">
+    <label>
+        <input type="text" placeholder="username" name="userName">
+    </label>
+    <button>send name</button>
+
+</form>
+
+
+<form action="" name="chess">
+    <label>
+        <input type="email" placeholder="email" name="userEmail">
+    </label>
+    <button>send email</button>
+
+</form>
+
+
+
+
+
+<script>
+// повертає нам усі форми, які є на сторінці
+    console.log(document.forms);
+
+    // витягуємо форми за неймом або айді
+console.log(document.forms.yuu);  //['yuu']
+
+console.log(document.forms['yuu'].userName);    // доступаємось до певного інпута в певній формі
+console.log(document.forms['chess']['userEmail']);
+
+
+</script>
+
+
+</body>
+</html>
