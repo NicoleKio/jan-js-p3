@@ -255,6 +255,10 @@ for (const coursesElement of coursesArray) {
     // boxLine.append(boxMonthDuration, boxHourDuration);
     boxLine.innerText = `MonthDuration - ${coursesElement.monthDuration}, HourDuration - ${coursesElement.hourDuration}`
     mainBox.append(boxTitle, boxLine, boxModules);
+    mainBox.style.background = '#d89aff';
+    mainBox.style.marginBottom = '8px';
+    mainBox.style.padding = '30px';
+
     document.body.appendChild(mainBox);
 
 }
