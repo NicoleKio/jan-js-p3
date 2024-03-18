@@ -228,31 +228,34 @@ let coursesArray = [
     }
 ];
 
+for (const coursesElement of coursesArray) {
+    let mainBox = document.createElement('div');
 
-for (const coursesA of coursesArray) {
-    let divA = document.createElement('div');
+    let boxTitle = document.createElement('h2');
+    boxTitle.innerText = coursesElement.title;
 
-    let ulA = document.createElement('ul')
+    // let boxMonthDuration = document.createElement('h3');
+    // boxMonthDuration.innerText = coursesElement.monthDuration;
+    // let boxHourDuration = document.createElement('h3')
+    // boxHourDuration.innerText = coursesElement.hourDuration;
 
-    for (const courseD of coursesA) {
-        let divB = document.createElement('')
+    let boxLine = document.createElement('div');
+    boxLine.style.display = 'flex';
 
-        let titleB = document.createElement('h2');
-        titleB.innerText = courseD.title;
+    let boxModules = document.createElement('div');
 
-        let monthDurationB = document.createElement('h3')
-        monthDurationB.innerText = `MonthDuration - ${courseD.monthDuration}, hourDuration - ${courseD.hourDuration}`;
 
-        let modulesB = document.createElement('li');
-        modulesB.innerText = courseD.modules;
-
-        divB.append(titleB, modulesB, modulesB)
+    for (const boxModule of coursesElement.modules) {
+        let boxModuleLine = document.createElement('li');
+        boxModuleLine.innerText = boxModule;
+        boxModules.append(boxModuleLine);
     }
 
 
-    ulA.appendChild(liB)
-    divA.appendChild(coursesA);
-
+    // boxLine.append(boxMonthDuration, boxHourDuration);
+    boxLine.innerText = `MonthDuration - ${coursesElement.monthDuration}, HourDuration - ${coursesElement.hourDuration}`
+    mainBox.append(boxTitle, boxLine, boxModules);
+    document.body.appendChild(mainBox);
 
 }
 
