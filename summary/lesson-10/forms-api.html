@@ -134,11 +134,11 @@ target.addEventListener('click', function (ev){
 
 // ONINPUT - можемо доступитися до велью нашого інпкта і зчитувати інформацію від час її впровадження в форму
 
-let luca1 = document.getElementById('luca')
-luca1.oninput = function (){                   // ще одна форма додавання характеристики івенту
-    console.log(this.value);
-    target.innerText = this.value;
-}
+// let luca1 = document.getElementById('luca')
+// luca1.oninput = function (){                   // ще одна форма додавання характеристики івенту
+//     console.log(this.value);
+//     target.innerText = this.value;
+// }
 
 
 
@@ -152,6 +152,9 @@ luca1.oninput = function (){                   // ще одна форма до�
     formF1.onsubmit = function (ev) {
         ev.preventDefault();
         console.log('hello')
+
+        let userMain = {name: this.userLuca.value}              // доступилися до інпуту у формі і формуємо об'єкт, потім виводимо
+        console.log(userMain);
     }
 
 
