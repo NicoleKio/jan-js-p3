@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #target{
+            height: 100px;
+            width: 100px;
+            background: #7f4fb2;
+        }
+
+
+    </style>
 </head>
 <body>
 
@@ -28,6 +37,15 @@
 
 </form>
 
+<div id="target"></div>
+
+
+
+<form id="f1">
+<input id="luca" name="userLuca">
+    <button>send</button>
+</form>
+
 
 
 
@@ -41,6 +59,113 @@ console.log(document.forms.yuu);  //['yuu']
 
 console.log(document.forms['yuu'].userName);    // доступаємось до певного інпута в певній формі
 console.log(document.forms['chess']['userEmail']);
+
+
+
+
+//------------------------------------------------------------ ІВЕНТИ ---------------------------------------------------------------
+// події, які відбуваються на сторінці: перезавантаження, клік, водіння мишю, анімації,
+// js events list
+
+    // let target = document.getElementById('target');
+    // target.onclick = function (){
+    //     console.log('click')
+    // }
+
+// можемо визначати не тільки подію, але і що трапилось під час події
+// для цього передаємо певний об'єкт в якості аргумента нашої функції - це ІВЕНТ!
+
+
+
+// ONCLICK - щось відбувається при кліку
+let target = document.getElementById('target');
+//                       об'єкт події - містить всю інфу про те, як клік стався і чому
+target.onclick = function (ev){
+    console.log('click')
+    console.log(ev)
+}
+
+
+
+
+// ONMOUSEMOVE - спрацьовує, коли водиш по об'єкту
+target.onmousemove = function (ev){            // визначаючи свідка, ми зможемо з нього дістати певну інфу
+    console.log('move');
+    console.log(ev.clientX, ev.clientY)          // виведе координати де ми знаходимось
+    let red = ev.clientX;
+    let green = ev.clientX;
+    let blue = ev.clientY;
+    this.style.background = `rgb(${red}, ${green}, ${blue})`   // тепер при наведенні буде змінюватися колір
+
+}
+
+
+
+// якщо захочемо додатково визначити онклік дещо пізніше в коді = додати новий івент--------------------------------------------------
+// визначаємо юез префіксу ON
+// визначаємо яку характеристику хочемо додати і 2й параметр - функція, шаблон  дією
+// тобто саджаємо множинні івенти
+
+target.addEventListener('click', function (ev){
+    console.log('PARFHOTH')
+})
+
+target.addEventListener('click', function (ev){
+    console.log('PARFHOTH1111')
+})
+
+target.addEventListener('click', function (ev){
+    console.log('PARFHOTH2222')
+})
+target.addEventListener('click', function (ev){
+    console.log('PARFHOTH333')
+})
+
+
+// ONMOUSEOVER - спрацьовує, коли заводимо курсор на елемент
+// ONMOUSELEAVE - спрацьовує, коли виводимо курсор з елементу
+// може використовуватися як трекання інформації поведінки користувачів
+
+
+
+
+
+//------------------------------------------------------------------------------------------------------------------------------------
+
+// ONINPUT - можемо доступитися до велью нашого інпкта і зчитувати інформацію від час її впровадження в форму
+
+let luca1 = document.getElementById('luca')
+luca1.oninput = function (){                   // ще одна форма додавання характеристики івенту
+    console.log(this.value);
+    target.innerText = this.value;
+}
+
+
+
+
+// PREVENTDEFAULT - заборонити дефолтні дії. (онсабміт по кд перезавантажує сторінку. Ми це забороняємо)
+// відхопити івент інформації з форми
+    let formF1 = document.forms.f1;
+
+    // formF1.user
+//                              ОБ'ЄКТ ПОДІЇ
+    formF1.onsubmit = function (ev) {
+        ev.preventDefault();
+        console.log('hello')
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </script>
