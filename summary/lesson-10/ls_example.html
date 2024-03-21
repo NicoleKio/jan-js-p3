@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Local Storage Example</title>
+    <style>
+        .products img {
+            width: 200px;
+        }
+        .products button{
+            display: block;
+            width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="products">
+
+
+
+</div>
+
+
+
+
+
+<script>
+    //-------------------------------------------------- РЕАЛІЗАЦІЯ КОРЗИНИ ---------------------------------------------------------------
+// ітеруємо масив, кожного разу під кожен продукт створюючи новий дів
+    // цей новий дів будемо додавати до нашого діва ПРОДУКТСМЕЙНДІВ, знайдемо його
+    // далі ж треба наповнити наш новий дів тайтлом та картинкою, а їх вже наповгюємо інфою та додаємо в сам дів
+    // далі створюємо а-ля кнопку... міняємо його текст, даємо адекватну форму через глобальні стилі
+    // далі прив'язуємо івент, який при натисканні буде передавати щось в локальне сховище
+    // це має бути шаблон, який буде відпрацьовувати
+    // там ми кажемо, що хочемо подивитися чи є в сховищі айтем карт. Або якщо там буде нал, то поверне просто пустий масив
+    // типу, якщо в сховищі буде не пустий масив, а щось, що ми туди додавали, то витягуємо і відразу переводимо парсом в адекватний вид масиву
+    // далі ми пушимо в наш масив той самий обёэкт, до якого привёязана кнопка.
+
+    // ТОБТО. Через кнопку з івентом ми передаємо в сховище об'єкт, там воно стрінгою
+    // створюємо змінну, в якій парсанемо кожний витягнутий об'єкт і парсанувши пушимо той об'єкт в масив, з яким можемо вже далі працювати
+
+
+    let productsMainDiv = document.getElementsByClassName('products')[0];
+
+
+
+    let products = [
+        {
+            title: 'milk',
+            price: 22,
+            image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+        },
+        {
+            title: 'juice',
+            price: 27,
+            image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+        },
+        {
+            title: 'tomato',
+            price: 47,
+            image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+        },
+        {
+            title: 'tea',
+            price: 15,
+            image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+        },
+    ];
+
+    for (const product of products) {
+        let productDiv = document.createElement('div');
+
+        let productTitle = document.createElement('h2');
+        let productImg = document.createElement('img');
+        productTitle.innerText = `${product.title} - ${product.price} $`;
+        productImg.src = product.image;
+
+        let productButton = document.createElement('button');
+        productButton.innerText = 'Add to cart'
+
+        productButton.onclick = function () {
+            let cart1 = JSON.parse(localStorage.getItem('cart'))  || [];
+            cart1.push(product);
+
+            localStorage.setItem('cart', JSON.stringify(cart1))
+
+        }
+
+
+        productsMainDiv.appendChild(productDiv);
+        productDiv.append(productTitle, productImg, productButton);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
