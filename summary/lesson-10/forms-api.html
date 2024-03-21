@@ -144,11 +144,11 @@ target.addEventListener('click', function (ev){
 
 // ONINPUT - можемо доступитися до велью нашого інпута і зчитувати інформацію під час її впровадження в форму
 
-// let luca1 = document.getElementById('luca')
-// luca1.oninput = function (){                   // ще одна форма додавання характеристики івенту
-//     console.log(this.value);
-//     target.innerText = this.value;
-// }
+let luca1 = document.getElementById('luca')
+luca1.oninput = function (){                   // ще одна форма додавання характеристики івенту
+    console.log(this.value);
+    target.innerText = this.value;
+}
 
 
 
@@ -171,20 +171,20 @@ target.addEventListener('click', function (ev){
 
 
 // можна трекати стан нашого документу
-
-window.onload = function () {       // спрацьовує, коли браузерне вікно завантажилось
-    console.log('load')
-}
-
-
-document.onreadystatechange = function () {
-    if (document.readyState === 'interactive'){
-        document.body.innerText = 'loading...'
-    }
-    if (document.readyState === 'complete'){
-        document.body.innerText = 'loading complete'
-    }
-}
+//
+// window.onload = function () {       // спрацьовує, коли браузерне вікно завантажилось
+//     console.log('load')
+// }
+//
+//
+// document.onreadystatechange = function () {
+//     if (document.readyState === 'interactive'){
+//         document.body.innerText = 'loading...'
+//     }
+//     if (document.readyState === 'complete'){
+//         document.body.innerText = 'loading complete'
+//     }
+// }
 
 // за доппомогою івентів можемо керувати сторінкою базуючись на діяї користувача
 
