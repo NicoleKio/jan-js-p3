@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="/asd" name="form1">
+        <label>
+            <input type="text" name="username">
+            <input type="password" name="password">
+            <button>Send</button>
+        </label>
+    </form>
+
+
+    <form action="/asd" name="form2">
+        <label>
+            <input type="text" name="username">
+            <input type="password" name="password">
+            <button>Send</button>
+        </label>
+    </form>
+    <form action="/asd" name="form3">
+        <label>
+            <input type="text" name="username">
+            <input type="password" name="password">
+            <button>Send</button>
+        </label>
+    </form>
+
+    <!-- action - сторінка, на яку переведе форма/ ти перейдеш за цією урлою, як натиснеш send
+     це ми робимо реквест - запит -->
+    <!-- те, що в урлі після ? - параметри запиту  -->
+
+<!-- ФОРМА ВІДПРАВЛЯЄ ДАННІ КУДИСЬ -->
+
+
+
+
+<!------------------------------------------------------ JS ------------------------------------------------------------>
+    <script>
+
+
+//----------------------------------------------------- ФОРМИ -------------------------------------------------------------
+        <!-- форма - це ДОМ структура, відповідно її можна знайти -->
+
+        // document.getElementsByName('form1')[0];
+        // виведе псевдомасив елементів, тому витягуємо перший елемент
+
+        // але є і підоб'єкт формс, які можна витягувати з цієї ячейки
+
+
+        console.log(document.forms);
+        console.log(document.forms['form1']);
+        let inputUserName = form1.username;
+        inputUserName.value = 'Yuu'
+
+        let passwordInput = form1['password']
+        console.log(passwordInput);
+
+        // тут доступаємось до інпуту форми та вводимо в його велью нове значення / 2 способи
+        // підступаємось через підоб'єкт формс, та нейм інпута в ній
+
+        // можна так МІНЯТИ тип поля
+
+        passwordInput.type = 'text';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
