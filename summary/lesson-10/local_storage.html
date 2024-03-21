@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Local storage</title>
+</head>
+<body>
+
+<script>
+
+//------------------------------------------------------- LOCAL STORAGE ----------------------------------------------------------------------
+    // невеличке сховище у браузері; це область, яка прив'язується до певного ресурсу та зберігає певні дані в собі.
+
+localStorage.setItem('asd', 'qwe');   // створює асоціацію ключ - значення.
+
+let item = localStorage.getItem('asd');        // витягуємо щось з локального сховища по назві ключа. Витягне його значення
+console.log(item);
+
+
+// localStorage.clear();        // чистить локальне сховище
+
+
+// зберігаємо об'єкти або масиви
+// так як по дефолту усі елементи передаються як стрінга то переводимо у стрінгу через JSON
+localStorage.setItem('user', JSON.stringify({id:1, name: 'Yukisa'}));
+
+
+// аби змінювати цей об'єкт треба витягти зі сховища, буде у форматі стрінги
+    let userJson = localStorage.getItem('user')
+    console.log(userJson);
+    let userUsual = JSON.parse(userJson);     // далі перетворюємо цей об'єкт із стрінги на звичайний об'єкт
+    console.log(userUsual);
+
+    // після цього вносимо якісь потрібні в нього зміни
+
+    userUsual.age = 19;
+
+    // тепер навпаки, редактованого юзера зберігаємо у форматі JSON
+    // сетаємо його в локальне сховище, перезаписуючи як JSON об'єкт
+    // тобто за принципом ключ - значення підставляємо в ячейку юзер наш новий об'єкт
+
+    // let userJSON = JSON.stringify(userUsual);
+    // localStorage.setItem('user', userJSON);
+
+    localStorage.setItem('user', JSON.stringify(userUsual));
+
+
+
+//--------------------------------------------------
+// помістили цілий масив у локальне сховище/ у нас створиться зафіксована ячейка з даннимим
+//
+// let people = [
+//     {name: 'Caroline', age: 24, status: false},
+//     {name: 'Amanda', age: 36, status: false},
+//     {name: 'Eric', age: 20, status: true},
+//     {name: 'Monalyne', age: 16, status: true},
+//     {name: 'Lyam', age: 22, status: true},
+//     {name: 'Joseph', age: 39, status: false},
+//     {name: 'Beatrice', age: 19, status: true},
+// ]
+//
+//     localStorage.setItem('users', JSON.stringify(people))
+
+
+// дістаємо об'єкти з локального сховища по їх ключу
+
+    let peopleJSON = localStorage.getItem('users')
+    console.log(peopleJSON);
+
+    let peopleNorm = JSON.parse(peopleJSON);
+    console.log(peopleNorm);
+    peopleNorm.push({});
+    console.log(peopleNorm)
+
+    // додали новий об'єкт в масив і тепер зберігаємо в локальне сховище
+    //
+    localStorage.setItem('users', JSON.stringify(peopleNorm)) ;
+    //
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
