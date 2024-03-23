@@ -1,41 +1,29 @@
 // Стоврити форму з трьома полями для name,surname,age та кнопкою. При натисканні на кнопку зчитати данні з полів, та вивести об'єкт
-// в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+// в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим
 
-
-
-    let form = document.getElementById('form1');
-
-    let button = document.createElement('button')
-    button.innerText = 'Send'
-    form.appendChild(button);
-
-    form.onsubmit = function (ev) {
-        ev.preventDefault()
-        let box = document.createElement('div')
-        let nameBox = document.createElement('div')
-        let surnameBox = document.createElement('div')
-        let ageBox = document.createElement('div')
-
-        nameBox.innerText = `${form.name.value}`;
-        surnameBox.innerText = `${form.surname.value}`;
-        ageBox.innerText = `${form.age.value}`;
-
-        box.append(nameBox, surnameBox, ageBox);
-        document.body.appendChild(box)
-    }
-
-
+    //
+    // let forma = document.getElementById('form1')
+    // forma.onsubmit = function (ev) {
+    //     ev.preventDefault()
+    //     let div = document.createElement('div')
+    //     div.innerText = forma.name.value + ' ' + forma.surname.value + forma.age.value;
+    //     document.body.appendChild(div)
+    // }
 
 
 
 // ==========================
 // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
 
+    let block = document.getElementById('box')
+    block.onload = function () {
+        block.innerText += block.value;
+    }
 
 // ==========================
-// Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessions зберігається інформація про дату та час
+// Є сторінка index-t1.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessions зберігається інформація про дату та час
 // відвідування сторінки. Є ще сторінка sessions.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування
-// сторінки index.html. Інфу НЕ виводити в консоль, а побудувати дом структуру під кожну сессію
+// сторінки index-t1.html. Інфу НЕ виводити в консоль, а побудувати дом структуру під кожну сессію
 
 
 
