@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Products</title>
     <style>
         #products{
             width: 200px;
@@ -51,26 +51,62 @@
     // щоб писанини в самому циклі було меньше будуємо окремо функцію з ДОМструктурою, яку будемо юзати
     // target - ціль, куди ми повинні щось додавати
 
-    function productDomCreator(product, target) {
+    function productDomCreator(productItem, target) {
 
         let div = document.createElement('div')
 
         let h2Div = document.createElement('h2')
-        h2Div.innerText = `${product.title} - ${product.price} $`;
+        h2Div.innerText = `${productItem.title} - ${productItem.price} $`;
         let imgDiv = document.createElement('img')
-        imgDiv.src = product.image;
+        imgDiv.src = productItem.image;
 
-        div.append(h2Div, imgDiv);
+        let button = document.createElement('button')
+        button.innerText = 'Take it'
+
+        button.addEventListener('click', function (ev) {
+            ev.preventDefault();
+            console.log(productItem)
+
+            let storage = JSON.parse(localStorage.getItem('products')) || [];
+            storage.push(productItem);
+            localStorage.setItem('products', JSON.stringify(storage));
+
+
+        })
+
+        div.append(h2Div, imgDiv, button);
         target.appendChild(div)
 
 
+
     }
-
-
 
     for (const product of products) {
         productDomCreator(product, target);
     }
+
+
+
+
+
+//------------------------------------------------- LOCALE STORAGE --------------------------------------------------------
+
+    // localStorage.getItem() - витягаємо/отримуємо щось із лс
+    // localStorage.setItem() - сетає щось у лс
+    // localStorage.clear() - чистить локальне сховище
+
+// localStorage.setItem('product', JSON.stringify(productItem))
+
+  // 1 параметр - це ключ
+  // 2 параметр - стрінгове значення того, що бажаємо зберегти
+
+// якщо ключі однакові, то буде просто перезаписувати велью
+
+
+
+
+
+
 
 
 
