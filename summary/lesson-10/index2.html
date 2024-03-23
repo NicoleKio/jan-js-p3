@@ -3,8 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #products{
+            width: 200px;
+
+            img{
+                width: 100%;
+            }
+        }
+
+    </style>
 </head>
 <body>
+
+<div id="products"></div>
+
+
+<script>
+
+    let products = [
+        {
+            title: 'milk',
+            price: 22,
+            image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+        },
+        {
+            title: 'juice',
+            price: 27,
+            image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+        },
+        {
+            title: 'tomato',
+            price: 47,
+            image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+        },
+        {
+            title: 'tea',
+            price: 15,
+            image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+        },
+    ];
+
+
+    let target = document.getElementById('products');
+    console.log(target)
+
+    // щоб писанини в самому циклі було меньше будуємо окремо функцію з ДОМструктурою, яку будемо юзати
+    // target - ціль, куди ми повинні щось додавати
+
+    function productDomCreator(product, target) {
+
+        let div = document.createElement('div')
+
+        let h2Div = document.createElement('h2')
+        h2Div.innerText = `${product.title} - ${product.price} $`;
+        let imgDiv = document.createElement('img')
+        imgDiv.src = product.image;
+
+        div.append(h2Div, imgDiv);
+        target.appendChild(div)
+
+
+    }
+
+
+
+    for (const product of products) {
+        productDomCreator(product, target);
+    }
+
+
+
+</script>
 
 </body>
 </html>
