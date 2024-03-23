@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/asd" name="form1">
+    <label>
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <button>Send</button>
+    </label>
+</form>
+
+
+<form action="/asd" name="form2">
+    <label>
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <button>Send</button>
+    </label>
+</form>
+<form action="/asd" name="form3">
+    <label>
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <button>Send</button>
+    </label>
+</form>
+
+<!-- action - сторінка, на яку переведе форма/ ти перейдеш за цією урлою, як натиснеш send
+ це ми робимо реквест - запит -->
+<!-- те, що в урлі після ? - параметри запиту  -->
+
+<!-- ФОРМА ВІДПРАВЛЯЄ ДАННІ КУДИСЬ -->
+
+
+
+
+<!------------------------------------------------------ JS ------------------------------------------------------------>
+<script>
+
+
+    //----------------------------------------------------- ФОРМИ -------------------------------------------------------------
+    <!-- форма - це ДОМ структура, відповідно її можна знайти -->
+
+    // document.getElementsByName('form1')[0];
+    // виведе псевдомасив елементів, тому витягуємо перший елемент
+
+    // але є і підоб'єкт формс, які можна витягувати з цієї ячейки
+
+
+    console.log(document.forms);
+    console.log(document.forms['form1']);
+    let inputUserName = form1.username;
+    inputUserName.value = 'Yuu'
+
+    let passwordInput = form1['password']
+    console.log(passwordInput);
+
+    // тут доступаємось до інпуту форми та вводимо в його велью нове значення / 2 способи
+    // підступаємось через підоб'єкт формс, та нейм інпута в ній
+
+    // можна так МІНЯТИ тип поля
+
+    passwordInput.type = 'text';
+
+
+    //--------------------------------------------------- ІВЕНТИ ---------------------------------------------------------
+
+    //------------------------------------------------------- ONIMPUT -----------------------------------------------------------
+    // кожкого разу як щось вводиться в інпут, виведе щось / виконає дію
+
+    // inputUserName.oninput = function () {
+    //     console.log('chess')
+    // }
+    // виводимо з інпута все, що в ньому прописується
+
+    inputUserName.oninput = function () {
+        console.log(this.value)
+    }
+
+
+
+
+
+    //---------------------------------------------------- ONFOCUS ------------------------------------------------------
+    // коли ми будемо фокусуватися в певне поле, то можемо задати що саме буде поведункою елемента
+    // ONBLUR - реверсивна, коли розфокусовуємося
+
+    passwordInput.onfocus = function () {
+        this.type = 'text';
+
+    }
+
+    passwordInput.onblur = function () {
+        this.type = 'password';
+    }
+
+
+
+    //-------------------------------------------------- ADDEVENTLISTENER ---------------------------------------------------
+    // додає ще евенти до об'єкту, до якого неможна доступитися, або якщо на ньому вже щось висить
+    // в ньому назва івента прописується стрінгою, але без профікса ON
+
+    passwordInput.addEventListener('blur', function () {
+        console.log('it works!')
+    })
+
+
+    inputUserName.addEventListener('blur', function () {
+        console.log(this.value)
+    })
+
+
+
+    //-------------------------------------------------- ONMOUSEOVER -----------------------------------------------------------
+    // подія при наведенні на об'єкт. Далі прописуємо що хочемо бачити
+
+    console.log('--------------------------')
+
+    let form2 = document.forms['form2']            // звернулися до форми
+    let usrName2 = form2['username'];                     // витягннувши форму, витягуємо  неї елемент по його імені
+    let usrPassword2 = form2['password'];
+
+    console.log(usrName2)
+    usrPassword2.onmouseover =function () {
+        this.type = 'text';
+    }
+    usrPassword2.onmouseleave =function () {
+        this.type = 'password';
+    }
+
+
+
+
+    //-------------------------------------------------- ONSUBMIT -----------------------------------------------------------
+    // спроможна прив'язатися лише до форми. це 'відправка інформації'.  (НАТИСКАННЯ НА КНОПКУ В ФОРМІ)
+
+    // якщо хочемо ВІДКЛЮЧИТИ ПЕРЕЗАВАНТАЖЕННЯ СТОРІНКИ, чи інші небажані сайд-ефекти івентів.
+
+    // впроваджуємо туди об'єкт івента, його наповнює сам браузер, це свідок нашої події. ТАМ Є ВСЕ.
+    // цей об'єкт може забереняти дефолтні події ДОМелментів / PREVENTDEFAULT
+    // форма після відпрацювання сабміту (відбувається процес відправки) перезавантажує сторінку!
+
+    form2.onsubmit = function (evObj) {
+        evObj.preventDefault()
+        // console.log(evObj)
+        console.log(this.username.value)
+    }
+
+
+
+
+    let form3 = document.forms['form3'];
+
+    form3.onsubmit = function (evOb) {
+        evOb.preventDefault()
+        console.log(this.username.value)
+    };
+
+
+
+
+
+
+
+
+
+</script>
+</body>
