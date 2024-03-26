@@ -6,5 +6,54 @@
 </head>
 <body>
 
+
+<form id="t1">
+
+    <input type="text" name="name">
+    <input type="text" name="surname">
+    <input type="number" name="age">
+    <button>Sent all</button>
+</form>
+
+    <script>
+        // Стоврити форму з трьома полями для name,surname,age та кнопкою. При натисканні на кнопку зчитати данні з
+        // полів, та вивести об'єкт
+        // в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим
+
+        let formT1 = document.forms['t1'];
+
+        formT1.onsubmit = function (event) {
+            event.preventDefault()
+
+            let div = document.createElement('div');
+            let h3 = document.createElement('h3');
+            h3.innerText = `Name: ${formT1.name.value}, surname: ${formT1.surname.value}, age: ${formT1.age.value}`;
+
+            div.appendChild(h3);
+            document.body.appendChild(div)
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
 </body>
 </html>

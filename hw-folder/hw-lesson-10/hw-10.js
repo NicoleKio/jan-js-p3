@@ -1,24 +1,6 @@
-// Стоврити форму з трьома полями для name,surname,age та кнопкою. При натисканні на кнопку зчитати данні з полів, та вивести об'єкт
-// в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим
 
-    //
-    // let forma = document.getElementById('form1')
-    // forma.onsubmit = function (ev) {
-    //     ev.preventDefault()
-    //     let div = document.createElement('div')
-    //     div.innerText = forma.name.value + ' ' + forma.surname.value + forma.age.value;
-    //     document.body.appendChild(div)
-    // }
-
-
-
-// ==========================
 // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
 
-    let block = document.getElementById('box')
-    block.onload = function () {
-        block.innerText += block.value;
-    }
 
 // ==========================
 // Є сторінка index-t1.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessions зберігається інформація про дату та час

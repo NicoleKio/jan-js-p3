@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW10/task2</title>
+</head>
+<body>
+    <div><p id="number"></p></div>
+
+<script>
+    // є сторінка, на якій є блок, я кому знаходиьтся цифра.
+    // написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
+
+    let div = document.getElementById('number');
+
+    window.onload = function (){
+        let num1  = localStorage.getItem('number') || 0;
+        let numUp = JSON.parse(num1) +1;
+        localStorage.setItem('number', JSON.stringify(numUp))
+        div.innerText = num1;
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>
