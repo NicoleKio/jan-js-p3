@@ -10,15 +10,29 @@
 
 <script>
 
-    // Є сторінка index-t1.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessions зберігається інформація про дату та час
-    // відвідування сторінки.
+    // Є сторінка index-t1.html (назва довільна), при відвідуванні якої в локальне сховще,
+    // в масив sessions зберігається інформація про дату та часвідвідування сторінки.
 
-    window.onload = function (){
+    let actualData = function () {
+
+        let dateLS = JSON.parse(localStorage.getItem('sessions')) || [];
+
+        let ourDate = new Date();
+
+        dateLS.push({
+            day: ourDate.getDate(),
+            hour: ourDate.getHours(),
+            minutes: ourDate.getMinutes(),
+            seconds: ourDate.getSeconds()
+        })
+
+        localStorage.setItem('sessions', JSON.stringify(dateLS));
 
 
-        // let lsData = localStorage.getItem('sessions')
-        localStorage.setItem('sessions', JSON.stringify( new Date()));
     }
+
+actualData();
+
 
 
 
