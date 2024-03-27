@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4</title>
+</head>
+<body>
+<div id="main"></div>
+
+<button id="prev">Prev</button>
+<button id="next">Next</button>
+
+
+<script>
+    //     зробити масив на 100 об'єктів та дві кнопки prev next
+    // при завантажені сторінки з'являються перші 10 об'єктів.
+    //     При натисканні next виводяться настпні 10 об'єктів
+    // При натисканні prev виводяться попередні 10 об'єктів
+    //
+
+    let array = [
+        {name: "Ray", username: "Wonder", password: 55387},
+        {name: "Luise", username: "Martagon flower", password: 958677},
+        {name: "Naiigrym", username: "Iudex", password: 956326},
+        {name: "Adelaide", username: "Ada's mavka", password: 7474387},
+        {name: "Yukisa", username: "Mistress", password: 38756968},
+        {name: "Ray", username: "Wonder", password: 55387},
+        {name: "Luise", username: "Martagon flower", password: 958677},
+        {name: "Naiigrym", username: "Iudex", password: 956326},
+        {name: "Adelaide", username: "Ada's mavka", password: 7474387},
+        {name: "Yukisa", username: "Mistress", password: 38756968},
+        {name: "Lacus", username: "Reaper of death", password: 4493948},
+        {name: "Lacus", username: "Reaper of death", password: 4493948},
+        {name: "Elia", username: "Mad Hatter", password: 616865},
+        {name: "Aqcert", username: "Joker", password: 111186},
+        {name: "Sophy", username: "Acolyte", password: 2275999},
+        {name: "Ray", username: "Wonder", password: 55387},
+        {name: "Luise", username: "Martagon flower", password: 958677},
+        {name: "Naiigrym", username: "Iudex", password: 956326},
+        {name: "Adelaide", username: "Ada's mavka", password: 7474387},
+        {name: "Yukisa", username: "Mistress", password: 38756968},
+        {name: "Lacus", username: "Reaper of death", password: 4493948},
+        {name: "Doloria", username: "Ms. Owel-Kont", password: 8655345},
+        {name: "Elia", username: "Mad Hatter", password: 616865},
+        {name: "Aqcert", username: "Joker", password: 111186},
+        {name: "Sophy", username: "Acolyte", password: 2275999},
+        {name: "Ray", username: "Wonder", password: 55387},
+        {name: "Luise", username: "Martagon flower", password: 958677},
+        {name: "Naiigrym", username: "Iudex", password: 956326},
+        {name: "Adelaide", username: "Ada's mavka", password: 7474387},
+        {name: "Yukisa", username: "Mistress", password: 38756968},
+        {name: "Lacus", username: "Reaper of death", password: 4493948},
+        {name: "Doloria", username: "Ms. Owel-Kont", password: 8655345},
+        {name: "Elia", username: "Mad Hatter", password: 616865},
+        {name: "Aqcert", username: "Joker", password: 111186},
+        {name: "Sophy", username: "Acolyte", password: 2275999},
+        {name: "Ray", username: "Wonder", password: 55387},
+        {name: "Luise", username: "Martagon flower", password: 958677},
+        {name: "Naiigrym", username: "Iudex", password: 956326},
+        {name: "Adelaide", username: "Ada's mavka", password: 7474387},
+        {name: "Yukisa", username: "Mistress", password: 38756968},
+        {name: "Lacus", username: "Reaper of death", password: 4493948},
+        {name: "Doloria", username: "Ms. Owel-Kont", password: 8655345},
+        {name: "Elia", username: "Mad Hatter", password: 616865},
+        {name: "Aqcert", username: "Joker", password: 111186},
+        {name: "Sophy", username: "Acolyte", password: 2275999},
+        {name: "Ray", username: "Wonder", password: 55387},
+        {name: "Luise", username: "Martagon flower", password: 958677},
+        {name: "Naiigrym", username: "Iudex", password: 956326},
+        {name: "Adelaide", username: "Ada's mavka", password: 7474387},
+        {name: "Yukisa", username: "Mistress", password: 38756968},
+        {name: "Lacus", username: "Reaper of death", password: 4493948},
+        {name: "Doloria", username: "Ms. Owel-Kont", password: 8655345},
+        {name: "Elia", username: "Mad Hatter", password: 616865},
+        {name: "Aqcert", username: "Joker", password: 111186},
+        {name: "Sophy", username: "Acolyte", password: 2275999},
+        {name: "Ray", username: "Wonder", password: 55387},
+        {name: "Luise", username: "Martagon flower", password: 958677},
+        {name: "Naiigrym", username: "Iudex", password: 956326},
+        {name: "Adelaide", username: "Ada's mavka", password: 7474387},
+        {name: "Yukisa", username: "Mistress", password: 38756968},
+        {name: "Lacus", username: "Reaper of death", password: 4493948},
+        {name: "Doloria", username: "Ms. Owel-Kont", password: 8655345},
+        {name: "Elia", username: "Mad Hatter", password: 616865},
+        {name: "Aqcert", username: "Joker", password: 111186},
+        {name: "Sophy", username: "Acolyte", password: 2275999},
+        {name: "Ray", username: "Wonder", password: 55387},
+        {name: "Luise", username: "Martagon flower", password: 958677},
+        {name: "Naiigrym", username: "Iudex", password: 956326},
+        {name: "Adelaide", username: "Ada's mavka", password: 7474387},
+        {name: "Yukisa", username: "Mistress", password: 38756968},
+        {name: "Lacus", username: "Reaper of death", password: 4493948},
+        {name: "Doloria", username: "Ms. Owel-Kont", password: 8655345},
+        {name: "Elia", username: "Mad Hatter", password: 616865},
+        {name: "Aqcert", username: "Joker", password: 111186},
+        {name: "Sophy", username: "Acolyte", password: 2275999},
+        {name: "Ray", username: "Wonder", password: 55387},
+        {name: "Luise", username: "Martagon flower", password: 958677},
+        {name: "Naiigrym", username: "Iudex", password: 956326},
+        {name: "Adelaide", username: "Ada's mavka", password: 7474387},
+        {name: "Yukisa", username: "Mistress", password: 38756968},
+        {name: "Lacus", username: "Reaper of death", password: 4493948},
+        {name: "Doloria", username: "Ms. Owel-Kont", password: 8655345},
+        {name: "Elia", username: "Mad Hatter", password: 616865},
+        {name: "Aqcert", username: "Joker", password: 111186},
+        {name: "Sophy", username: "Acolyte", password: 2275999},
+        {name: "Ray", username: "Wonder", password: 55387},
+        {name: "Luise", username: "Martagon flower", password: 958677},
+        {name: "Naiigrym", username: "Iudex", password: 956326},
+        {name: "Adelaide", username: "Ada's mavka", password: 7474387},
+        {name: "Yukisa", username: "Mistress", password: 38756968},
+        {name: "Lacus", username: "Reaper of death", password: 4493948},
+        {name: "Doloria", username: "Ms. Owel-Kont", password: 8655345},
+        {name: "Elia", username: "Mad Hatter", password: 616865},
+        {name: "Aqcert", username: "Joker", password: 111186},
+        {name: "Sophy", username: "Acolyte", password: 2275999},
+        {name: "Ray", username: "Wonder", password: 55387},
+        {name: "Luise", username: "Martagon flower", password: 958677},
+        {name: "Naiigrym", username: "Iudex", password: 956326},
+        {name: "Adelaide", username: "Ada's mavka", password: 7474387},
+        {name: "Yukisa", username: "Mistress", password: 38756968},
+        {name: "Lacus", username: "Reaper of death", password: 4493948},
+        {name: "Doloria", username: "Ms. Owel-Kont", password: 8655345},
+        {name: "Elia", username: "Mad Hatter", password: 616865},
+        {name: "Aqcert", username: "Joker", password: 111186},
+        {name: "Sophy", username: "Acolyte", password: 2275999},
+    ]
+
+    let button1 = document.getElementById('prev')
+    let button2 = document.getElementById('next')
+
+    let page = 1;
+
+    let creator = (page, limit = 10) => {
+        let main = document.getElementById('main');
+
+        let startPoint = (page - 1) * limit;  // 0
+        let endPoint = page * limit;  // 10 те скілько треба пропускати
+
+        // якщо 10 більше за довжину масиву = 100, що є фолсом, то тепер кінцева точка = 100
+        // і кнопка некст блокована, але якщо скіп не більший ніж 100, що є тру, то кнопка некст активна
+        // таким чином ми будемо блокувати кнопку якщо додійдемо до кінця і наш скіп буде == 100
+        if (endPoint > array.length) {
+            endPoint = array.length;
+            button2.setAttribute('disable', 'disable');
+        } else {
+            button2.removeAttribute('disable');
+        }
+
+        if (startPoint > 0) {
+            button1.removeAttribute('disabled')
+        } else {
+            button1.setAttribute('disabled', 'disabled');
+        }
+
+
+        let children = [];
+        for (let i = startPoint; i < endPoint; i++) {
+            const item = array[i];
+
+            let child = document.createElement('div');
+            let name = document.createElement('div');
+            let surname = document.createElement('div');
+
+            name.innerText = `Name: ${item.name}`
+            surname.innerText = `Username:--- ${item.username}`
+
+            child.append(name, surname);
+            children.push(child)
+        }
+
+        main.replaceChildren(...children)
+    }
+
+    creator(page);
+    button1.addEventListener('click', ()=> creator(page -= 1))
+    button2.addEventListener('click', ()=> creator(page += 1))
+
+
+</script>
+
+
+</body>
+</html>
